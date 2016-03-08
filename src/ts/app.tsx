@@ -6,6 +6,7 @@ import {render} from 'react-dom';
 import store from './store';
 import {Provider} from 'react-redux';
 import Entry from './components/page/Entry';
+import About from './components/page/About';
 
 // Include bootstrap css
 import 'bootstrap/dist/css/bootstrap.css';
@@ -16,9 +17,8 @@ import '../css/style.styl';
 render(
   <Provider store={store}>
       <Router history={browserHistory}>
-          <Route path='/' component={Entry}>
-
-          </Route>
+          <Route path='/' component={Entry}></Route>
+          <Route path='/about' component={About}></Route>
       </Router>
   </Provider>,
   document.querySelector('#app')

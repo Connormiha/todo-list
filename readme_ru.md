@@ -8,7 +8,7 @@ Todo-list SPA проект. Используется следующий стек
 **Webpack** - сборщик  
 **Karma** - Запускает юнит тесты  
 **Jasmine** - Библиотека для юнит тестов  
-**Isparta** - Проверка покрытия тестов
+**Isparta** - Проверка покрытия тестов  
 **Typings** - Загружает d.ts файлы из DefinitelyTyped  
 **tslint, stylint** - валидация кода TypeScript и Stylus  
 **Gulp** для запуска линтеров  

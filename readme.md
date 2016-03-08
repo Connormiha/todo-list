@@ -8,8 +8,8 @@ Todo-list simple page application.
 **Redux** - flux architecture
 **Webpack** - build manager  
 **Karma** - unit tests runner  
-**Jasmine** - unit tests library
-**Isparta** - code coverage
+**Jasmine** - unit tests library  
+**Isparta** - code coverage  
 **Typings** - DefinitelyTyped libs manager  
 **tslint, stylint** - TypeScript and Stylus code validation  
 **Gulp** for run linters  
