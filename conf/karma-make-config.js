@@ -55,6 +55,15 @@ module.exports = function (options) {
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         reporters: ['spec', 'coverage', 'notify'],
 
+        coverageReporter: {
+            dir: 'reports/coverage',
+            reporters: [
+                // reporters not supporting the `file` property
+               {type: 'html', subdir: 'report-html'},
+               {type: 'text'}
+            ]
+        },
+
 
         // web server port
         port: 9876,

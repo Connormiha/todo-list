@@ -8,3 +8,4 @@ npm-debug.log
 /test/_*
 /src/js/*.js
 /src/js/.js.map
+/reports

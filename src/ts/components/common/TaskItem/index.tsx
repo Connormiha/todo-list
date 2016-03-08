@@ -13,12 +13,12 @@ export default class TaskItem extends React.Component<any, {}> {
 
     render() {
         return (
-            <li className="row">
-                <div className="col-md-4">
+            <li className="task-item row">
+                <div className="task-item__title col-md-4">
                     {this.props.children}
                 </div>
                 <div className="col-md-2">
-                    <Button onClick={this.handleClickRemove}>Удалить</Button>
+                    <Button onClick={this.handleClickRemove} mods={['danger']}>Удалить</Button>
                 </div>
             </li>
         );
