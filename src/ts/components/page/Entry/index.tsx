@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import AddTask from '../forms/AddTask';
-import {addTask, removeTask} from '../../actions/tasks';
-import TaskItem from '../common/TaskItem';
+import AddTask from '../../forms/AddTask';
+import {addTask, removeTask} from '../../../actions/tasks';
+import TaskList from '../../common/TaskList';
 
 @connect(
     state => state
@@ -23,17 +23,11 @@ export default class Entry extends React.Component<any, any> {
     }
 
     render() {
-        let items = this.props.tasks.map((item) => {
-            return (<TaskItem key={item.id} id={item.id} onRemove={this.onRemove}>{item.title}</TaskItem>);
-        });
-
         return (
             <section className="container">
                 <h2>Task list</h2>
                 <AddTask onAdd={this.onAdd} />
-                <ul className="container-fluid">
-                    {items}
-                </ul>
+                <TaskList onRemove={this.onRemove}>{this.props.tasks}</TaskList>
             </section>
         );
     }

@@ -11,7 +11,7 @@ describe('TaskItem test', function () {
           <View>Test text</View>
         );
 
-        const elements: Array<Element> = ReactTestUtils.scryRenderedDOMComponentsWithClass(view, 'task-item');
+        const elements: Array<Element> = ReactTestUtils.scryRenderedDOMComponentsWithClass(view, 'task-list__item');
         expect(elements.length).toBe(1);
         expect(elements[0].querySelector('.task-item__title').innerHTML).toBe('Test text');
     });

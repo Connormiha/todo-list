@@ -5,7 +5,7 @@ import * as React from 'react';
 import {render} from 'react-dom';
 import store from './store';
 import {Provider} from 'react-redux';
-import Entry from './components/page/Entry.tsx';
+import Entry from './components/page/Entry';
 
 // Include bootstrap css
 import 'bootstrap/dist/css/bootstrap.css';
