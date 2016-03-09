@@ -5,7 +5,13 @@ import {addTask, removeTask} from '../../../actions/tasks';
 import TaskList from '../../common/TaskList';
 
 @connect(
-    state => state
+    state => state,
+    dispatch => {
+        return {
+            add: params => dispatch(addTask(params)),
+            remove: id => dispatch(removeTask(id))
+        };
+    }
 )
 export default class Entry extends React.Component<any, any> {
     constructor(props) {
@@ -15,11 +21,11 @@ export default class Entry extends React.Component<any, any> {
     }
 
     onAdd(params): void {
-        this.props.dispatch(addTask({title: params.title}));
+        this.props.add({title: params.title});
     }
 
     onRemove(id): void {
-        this.props.dispatch(removeTask(id));
+        this.props.remove(id);
     }
 
     render() {
