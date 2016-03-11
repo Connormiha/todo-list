@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import AddTask from '../../forms/AddTask';
-import {addTask, removeTask} from '../../../actions/tasks';
-import TaskList from '../../common/TaskList';
+import AddTask from 'components/forms/AddTask';
+import {addTask, removeTask} from 'actions/tasks';
+import TaskList from 'components/common/TaskList';
 
 @connect(
     state => state,
@@ -13,7 +13,7 @@ import TaskList from '../../common/TaskList';
         };
     }
 )
-export default class Entry extends React.Component<any, any> {
+export default class Entry extends React.Component<any, {}> {
     constructor(props) {
         super(props);
         this.onRemove = this.onRemove.bind(this);

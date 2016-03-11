@@ -1,7 +1,7 @@
 export const ADD_TASK = 'ADD_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
 
-import ActionsTaskConst from '../constants/actionsTask';
+import ActionsTaskConst from 'constants/actionsTask';
 
 export interface AddTaskInterface {
     title: string;

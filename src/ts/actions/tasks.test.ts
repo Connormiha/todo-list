@@ -1,7 +1,7 @@
 'use strict';
 
 import * as actions from './tasks';
-import constants from '../constants/actionsTask';
+import constants from 'constants/actionsTask';
 
 describe('Action addTask', function () {
     it('Should return action object', function () {
