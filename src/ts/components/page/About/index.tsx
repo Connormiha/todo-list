@@ -28,7 +28,7 @@ export default class About extends React.Component<any, {}> {
                         <a href="https://github.com/rossPatton/stylint" target="_blank">Stylint</a> - TypeScript and Stylus code validation
                     </li>
                     <li><a href="http://gulpjs.com/" target="_blank">Gulp</a> task manager</li>
-                    <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> css framework</li>
+                    <li><a href="https://octicons.github.com/" target="_blank">Github icon fonts</a></li>
                 </ul>
             </div>
         );

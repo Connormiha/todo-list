@@ -72,11 +72,15 @@ module.exports = {
 			}
 		],
 	},
+	stylus: {
+		use: [require('nib')()],
+		'import': ['~nib/lib/nib/index.styl']
+	},
 	devtool: PARAMS.sourceMap,
 	noParse: [/react\.min\.js/, /react-dom\.min\.js/],
 	plugins: [
 		new HtmlWebpackPlugin({
-	        template: '../index.html',
+			template: '../index.html',
 			minify: {
 				//removeComments: true
 			}

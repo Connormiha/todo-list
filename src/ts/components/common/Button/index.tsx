@@ -1,23 +1,42 @@
 import * as React from 'react';
+import BaseBem from 'components/common/BaseBem';
 
-export default class Button extends React.Component<any, {}> {
+import Icon from 'components/common/Icon';
+
+import './style.styl';
+
+export default class Button extends BaseBem<any, {}> {
     constructor(props) {
         super(props);
-        this._getCssClass = this._getCssClass.bind(this);
+        this.renderIcon = this.renderIcon.bind(this);
+    }
+
+    bemName: string = 'button';
+
+    renderIcon() {
+        switch (this.props.type) {
+            case 'remove':
+                return <Icon type="x" />;
+
+            case 'success':
+                return <Icon type="check" />;
+        }
+
+        return null;
     }
 
     render() {
-        return (
-            <button className={this._getCssClass()} onClick={this.props.onClick}>{this.props.children}</button>
-        );
-    }
+        let mods = [this.props.type];
 
-    private _getCssClass(): string {
-        let {mods} = this.props;
-        if (!mods) {
-            return 'btn';
+        if (this.props.disabled) {
+            mods.push('disabled');
         }
 
-        return mods.reduce((result, item) => `${result} btn-${item}`, 'btn');
+        return (
+            <button className={this.bemBlock({mods: mods})} onClick={this.props.onClick}>
+                {this.renderIcon()}
+                <span className={this.bemBlock({block: ['text']})}>{this.props.children}</span>
+            </button>
+        );
     }
 }

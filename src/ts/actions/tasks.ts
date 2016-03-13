@@ -20,3 +20,10 @@ export const removeTask = (id: number) => {
         id
     };
 };
+
+export const resolveTask = (id: number) => {
+    return {
+        type: ActionsTaskConst.RESOLVE,
+        id
+    };
+};

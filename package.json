@@ -21,7 +21,6 @@
     "test:dev": "node node_modules/karma/bin/karma start conf/karma.dev.conf.js"
   },
   "devDependencies": {
-    "bootstrap": "^3.3.6",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
@@ -41,6 +40,7 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.24",
     "karma-webpack": "^1.7.0",
+    "nib": "^1.1.0",
     "phantomjs-prebuilt": "^2.1.4",
     "react": "^0.14.7",
     "react-addons-test-utils": "^0.14.7",

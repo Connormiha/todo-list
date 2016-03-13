@@ -1,0 +1,36 @@
+.button
+    cursor: pointer
+    border-width: 1px
+    border-style: solid 
+    border-radius: 5px
+    box-shadow: none
+    color: #fff
+    font-size: 13px
+    margin: 0 5px
+    outline: none
+    padding: 3px 6px
+    transition: 0.5s all ease
+    user-select: none
+    white-space: nowrap
+
+    &__text
+        margin: 0 5px
+
+    &_remove
+        background: #c9302c
+        border-color: #ac2925
+        &:hover
+            background: #ac2925;
+            border-color: #761c19;
+
+    &_success
+        background: #449d44
+        border-color: #398439
+        &:hover
+            background: #398439
+            border-color: #255625
+
+    &_disabled
+        cursor: default
+        opacity: 0.3
+        pointer-events: none

@@ -2,7 +2,8 @@
 
 const enum ActionsTask {
     ADD,
-    REMOVE
+    REMOVE,
+    RESOLVE
 }
 
 export default ActionsTask;

@@ -13,7 +13,7 @@ Todo-list simple page application.
 **Typings** - DefinitelyTyped libs manager  
 **tslint, stylint** - TypeScript and Stylus code validation  
 **Gulp** for run linters  
-**Bootstrap** css framework
+**Octicons** Github icon fonts
 
 Tested on Node.js 5.0+
 ### Install
