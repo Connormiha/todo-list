@@ -9,12 +9,6 @@ import Main from 'components/layout/Main';
 import Entry from 'components/page/Entry';
 import About from 'components/page/About';
 
-
-
-
-// Include bootstrap css
-// import 'bootstrap/dist/css/bootstrap.css';
-
 //import CSS
 import '../../assets/fonts/octicons.css';
 
