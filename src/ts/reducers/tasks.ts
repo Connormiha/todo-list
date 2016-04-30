@@ -1,32 +1,37 @@
 import {combineReducers} from 'redux';
 import ActionsTaskConst from '../constants/actionsTask';
+import * as Immutable from 'immutable';
+
+export interface TaskItem {
+    id: number;
+    resolved: boolean;
+    title: string;
+}
 
 let id: number = 0;
 
-const tasks = (state: Array<any> = [], action): Array<any> => {
+const tasks = (state: Immutable.List<TaskItem> = Immutable.List([]), action): Immutable.List<TaskItem> => {
     switch (action.type) {
         case ActionsTaskConst.ADD:
-            state = state.slice();
-            state.push({
-                id: id++,
-                resolved: false,
-                title: action.params.title
-            });
-            break;
+            return state.push(
+                    {
+                        id: id++,
+                        resolved: false,
+                        title: action.params.title
+                    }
+                );
 
         case ActionsTaskConst.REMOVE:
-            state = state.filter(item => item.id !== action.id);
-            break;
+            return state.filter(item => item.id !== action.id) as Immutable.List<TaskItem>;
 
         case ActionsTaskConst.RESOLVE:
-            state = state.map((item) => {
+            return state.map((item) => {
                 if (item.id === action.id) {
                     return Object.assign({}, item, {resolved: true});
                 }
 
                 return item;
-            });
-            break;
+            }) as Immutable.List<TaskItem>;
     }
 
     return state;
