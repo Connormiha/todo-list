@@ -1,8 +1,8 @@
-import reducer, {TaskItem, ActionsTypes, addTask, removeTask} from './tasks';
+import reducer, {TaskItem, ActionsTypes, addTask, removeTask, resolveTask} from './tasks';
 import * as Immutable from 'immutable';
 
 describe('Action addTask', () => {
-    it('Should return action object', () => {
+    it('Should return an action object', () => {
         const result = addTask({title: 'test'});
 
         expect(result.type).toBe(ActionsTypes.ADD);
@@ -11,10 +11,19 @@ describe('Action addTask', () => {
 });
 
 describe('Action removeTask', () => {
-    it('Should return action object', () => {
+    it('Should return an action object', () => {
         const result = removeTask(100);
 
         expect(result.type).toBe(ActionsTypes.REMOVE);
+        expect(result.id).toBe(100);
+    });
+});
+
+describe('Action resolveTask', () => {
+    it('Should return an action object', () => {
+        const result = resolveTask(100);
+
+        expect(result.type).toBe(ActionsTypes.RESOVLE);
         expect(result.id).toBe(100);
     });
 });

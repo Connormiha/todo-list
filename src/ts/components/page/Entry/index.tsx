@@ -9,7 +9,7 @@ import BaseBem from 'components/common/BaseBem';
 import './style.styl';
 
 @connect(
-    state => state,
+    ({tasks}) => ({tasks}),
     dispatch => {
         return {
             add: params => dispatch(addTask(params)),

@@ -1,6 +1,5 @@
 import * as Immutable from 'immutable';
 
-// Actions types
 export const enum ActionsTypes {
     ADD,
     REMOVE,
@@ -36,7 +35,7 @@ export interface TaskItem {
     id: number;
     resolved: boolean;
     title: string;
-}
+};
 
 let id: number = 0;
 
