@@ -1,5 +1,4 @@
 # Todo-list with Redux
-[Описание на русском языке](readme_ru.md)     
 
 Todo-list simple page application.  
 **TypeScript** - compile to ES5  

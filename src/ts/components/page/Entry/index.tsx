@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import AddTask from 'components/forms/AddTask';
-import {addTask, removeTask, resolveTask} from 'actions/tasks';
+import {addTask, removeTask, resolveTask} from 'flux/tasks';
 import TaskList from 'components/common/TaskList';
 import Button from 'components/common/Button';
 import BaseBem from 'components/common/BaseBem';

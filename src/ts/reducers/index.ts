@@ -1,10 +1,8 @@
-'use strict';
-
 import {combineReducers} from 'redux';
-import TasksReducer from './tasks';
+import tasks from '../flux/tasks';
 
 const rootReducer = combineReducers({
-    tasks: TasksReducer
+    tasks
 });
 
 export default rootReducer;

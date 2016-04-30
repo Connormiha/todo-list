@@ -1,10 +1,25 @@
-'use strict';
-
-import reducer, {TaskItem} from './tasks';
-import constants from '../constants/actionsTask';
+import reducer, {TaskItem, ActionsTypes, addTask, removeTask} from './tasks';
 import * as Immutable from 'immutable';
 
-describe('Reducer Tasks', function () {
+describe('Action addTask', () => {
+    it('Should return action object', () => {
+        const result = addTask({title: 'test'});
+
+        expect(result.type).toBe(ActionsTypes.ADD);
+        expect(result.params.title).toBe('test');
+    });
+});
+
+describe('Action removeTask', () => {
+    it('Should return action object', () => {
+        const result = removeTask(100);
+
+        expect(result.type).toBe(ActionsTypes.REMOVE);
+        expect(result.id).toBe(100);
+    });
+});
+
+describe('Reducer Tasks', () => {
     it('Should return same state for unknown type', () => {
         const state: Immutable.List<TaskItem> = Immutable.List([]);
         expect(reducer(state, {})).toBe(state);
@@ -18,7 +33,7 @@ describe('Reducer Tasks', function () {
         const state: Immutable.List<TaskItem> = Immutable.List([]);
         const result = reducer(state, {
             params: {title: 'test'},
-            type: constants.ADD
+            type: ActionsTypes.ADD
         });
 
         expect(result.size).toBe(1);
@@ -27,21 +42,21 @@ describe('Reducer Tasks', function () {
     });
 
     it('Should work type=remove', () => {
-        const state = [
+        const state: Immutable.List<TaskItem> = Immutable.List([
             {
                 id: 100
             },
             {
                 id: 101
             }
-        ];
+        ]);
 
         const result = reducer(state, {
             id: 100,
-            type: constants.REMOVE
+            type: ActionsTypes.REMOVE
         });
 
-        expect(result.length).toBe(1);
-        expect(result[0].id).toBe(101);
+        expect(result.size).toBe(1);
+        expect(result.first().id).toBe(101);
     });
 });
