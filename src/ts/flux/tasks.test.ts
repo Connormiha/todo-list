@@ -23,7 +23,7 @@ describe('Action resolveTask', () => {
     it('Should return an action object', () => {
         const result = resolveTask(100);
 
-        expect(result.type).toBe(ActionsTypes.RESOVLE);
+        expect(result.type).toBe(ActionsTypes.RESOLVE);
         expect(result.id).toBe(100);
     });
 });
